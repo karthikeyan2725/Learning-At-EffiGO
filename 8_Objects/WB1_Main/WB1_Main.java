@@ -18,7 +18,7 @@ public class WB1_Main {
         object.nationality = "Indian";
         object.dateOfBirth = "01/03/2004";
         object.seatNumber = 5;
-        object.passport = new String[]{"Karthikeyan", "Indian", "01/03/2004"};
+        object.passport = new String[]{object.name , object.nationality, object.dateOfBirth};
 
         // After Update
         System.out.println("After Update: ");
