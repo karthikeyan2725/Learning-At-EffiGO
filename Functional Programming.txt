@@ -1,0 +1,56 @@
+* Functional Programming
+
+1. Functional Programming
+2. Lambda Expressions
+3. Stream API
+
+* define methods in interface. Used to declare methods.
+* Functional programming : Focus on function, Imperative and declarative.
+* Lambda : Hadoop, android. Removes boiler plate code.
+* Stream API : Concurrency and Parallel Programming
+
+
+Interfaces: Default and static
+* Interface methods are abstract in nature.
+* stream Api introduced many methods to interfaces like List. 
+* Instead of changing the interfaces, and make the newer methods implemented in subclass, the methods are defined within the interface itself.
+* Default keyword is used to define the body.
+* multiple inheritance  with parents having same default method: redefine in child class.
+* if class has the same default method signature, then its definition will be used.
+* Third rule
+* Cannot have default method signatures with already existing methods, such as equals in object.
+* Static methods in interfaces allows functions to be used without creating the object.
+
+Lambda : 
+* Provide implementation to interfaces using lambdas.
+A obj = new A() {
+	... method implementation ...
+}
+
+Functional Interface          | Method to Call         | Description
+------------------------------|------------------------|------------------------------------------------------------
+Runnable                      | run()                 | No arguments, returns nothing.
+
+Supplier<T>                   | get()                 | No arguments, returns a value of type T.
+
+Consumer<T>                   | accept(T t)           | Takes one argument, returns nothing.
+
+BiConsumer<T, U>              | accept(T t, U u)      | Takes two arguments, returns nothing.
+
+Function<T, R>                | apply(T t)            | Takes one argument, returns a value of type R.
+
+BiFunction<T, U, R>           | apply(T t, U u)       | Takes two arguments, returns a value of type R.
+
+Predicate<T>                  | test(T t)             | Takes one argument, returns a boolean.
+
+BiPredicate<T, U>             | test(T t, U u)        | Takes two arguments, returns a boolean.
+
+UnaryOperator<T>              | apply(T t)            | Takes one argument, returns a value of the same type (T).
+
+BinaryOperator<T>             | apply(T t1, T t2)     | Takes two arguments of the same type (T), returns a value of the same type (T).
+
+Callable<V>                   | call()                | No arguments, returns a value of type V.
+
+Comparator<T>                 | compare(T o1, T o2)   | Compares two objects and returns an integer.
+
+
