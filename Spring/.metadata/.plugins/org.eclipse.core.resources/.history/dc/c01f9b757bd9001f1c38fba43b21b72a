@@ -1,0 +1,12 @@
+package com.effigo_spring_learn.learn_spring;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class App03GamingSpring {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		var context = new AnnotationConfigApplicationContext(GameContext.class);
+	}
+
+}

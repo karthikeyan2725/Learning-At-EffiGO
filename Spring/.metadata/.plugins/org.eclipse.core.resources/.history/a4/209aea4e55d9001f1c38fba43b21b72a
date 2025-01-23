@@ -1,0 +1,12 @@
+package com.effigo_spring_learn.learn_spring;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class App02HelloWorldSpring {
+	public static void main(String[] args) {
+		// 1: Creating the configuration class
+		// 2: Creating the spring context
+		var context = new AnnotationConfigApplicationContext(HelloWorldSpringContext.class);
+		System.out.println(context.getBean("name"));
+	}
+}

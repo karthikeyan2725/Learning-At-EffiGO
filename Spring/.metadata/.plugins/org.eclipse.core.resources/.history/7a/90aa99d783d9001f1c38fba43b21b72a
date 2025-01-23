@@ -1,0 +1,35 @@
+package com.effigo_spring_learn.learn_spring;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.effigo_spring_learn.learn_spring.game.GameRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.effigo_spring_learn.learn_spring.game.GameConsole;
+import com.effigo_spring_learn.learn_spring.game.GameRunner;
+import com.effigo_spring_learn.learn_spring.game.PacManGame;
+
+@Configuration
+class GameContext {
+	@Bean
+	public GameConsole game() {
+		return new PacManGame();
+	}
+	
+	@Bean
+	public GameRunner gameRunner() {
+		return new GameRunner(game());
+	}
+}
+
+public class App03GamingSpring {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try(var context = new AnnotationConfigApplicationContext(GameContext.class)){
+			context.getBean(GameRunner.class).run();
+		}
+	}
+
+}
