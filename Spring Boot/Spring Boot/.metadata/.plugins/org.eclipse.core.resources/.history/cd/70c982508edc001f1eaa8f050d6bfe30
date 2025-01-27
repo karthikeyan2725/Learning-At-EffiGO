@@ -1,0 +1,40 @@
+package com.karthikeyan.springboot.learn_configuration_class;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+@SpringBootApplication
+public class LearningConfigurationClass {
+
+	public static void main(String[] args) {
+//		SpringApplication.run(LearningConfigurationClass.class, args);
+		@Autowirede
+		ExampleConfiguration exampleConfiguration;
+		System.out.println("Config value : " + exampleConfiguration.getNumber());
+	}
+}
+
+@Component
+@ConfigurationProperties(prefix = "example.config")
+class ExampleConfiguration{
+	private int number;
+	private String text;
+	
+	public void setNumber(int number) {
+		this.number = number;
+	}
+	
+	public int getNumber() {
+		return number;
+	}
+	
+	public String setText(String text) {
+		return this.text = text;
+	}
+	
+	public String getText() {
+		return text;
+	}
+}

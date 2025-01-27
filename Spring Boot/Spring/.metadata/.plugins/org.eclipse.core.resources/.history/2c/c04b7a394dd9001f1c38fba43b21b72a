@@ -1,0 +1,20 @@
+package com.effigo_spring_learn.learn_spring.game;
+
+public class MarioGame {
+	public void down() {
+		System.out.println("Going Down");
+	}
+	
+	public void up() {
+		System.out.println("Going Up");
+	}
+
+	public void right() {
+		System.out.println("Going Right");
+	}
+	
+	public void left() {
+		System.out.println("Going Left");
+	}
+}
+

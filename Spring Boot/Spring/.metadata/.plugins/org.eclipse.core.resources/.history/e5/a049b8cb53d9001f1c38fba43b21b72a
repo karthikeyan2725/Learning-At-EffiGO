@@ -1,0 +1,7 @@
+package com.effigo_spring_learn.learn_spring;
+
+public class App02HelloWorldSpring {
+	public static void main(String[] args) {
+		
+	}
+}

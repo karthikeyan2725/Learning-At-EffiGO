@@ -1,0 +1,28 @@
+package com.karthikeyan.springboot.learn_configuration_class;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+@SpringBootApplication
+public class LearningConfigurationClass {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LearningConfigurationClass.class, args);
+	}
+
+}
+
+@ConfigurationProperties(prefix = "example.config")
+class ExampleConfiguration{
+	private int number;
+	private String text;
+	
+	public int getNumber() {
+		return number;
+	}
+	
+	public String getText() {
+		return text;
+	}
+}

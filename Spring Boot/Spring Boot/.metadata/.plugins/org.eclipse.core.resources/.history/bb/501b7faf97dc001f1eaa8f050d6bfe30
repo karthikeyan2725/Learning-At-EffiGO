@@ -1,0 +1,5 @@
+spring.application.name=learn-spring-boot
+spring.profiles.active=dev
+
+example.config.number=2
+example.config.text=hello
