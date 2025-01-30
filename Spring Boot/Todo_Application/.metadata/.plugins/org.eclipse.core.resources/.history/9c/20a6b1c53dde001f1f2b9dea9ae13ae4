@@ -1,0 +1,12 @@
+package com.springboot.application.todo;
+
+import java.time.LocalDate;
+
+public class Todo {
+	private int id;
+	private String username;
+	private String description;
+	private LocalDate targetDate;
+	private Boolean done;
+	
+}

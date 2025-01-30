@@ -1,0 +1,23 @@
+package com.karthikeyan.springboot.learn_jpa_and_entities;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import jakarta.persistence.Entity;
+
+@SpringBootApplication
+public class LearnJpaAndHibernateApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LearnJpaAndHibernateApplication.class, args);
+	}
+
+}
+
+@Entity
+class Course{
+	int id;
+	String name;
+	String author;
+}
+

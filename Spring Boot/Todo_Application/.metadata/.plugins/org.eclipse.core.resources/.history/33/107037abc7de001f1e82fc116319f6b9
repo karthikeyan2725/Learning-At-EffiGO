@@ -1,0 +1,22 @@
+
+<html>
+	<head>
+		<title>List Todos Page</title>
+	</head>
+	<body>
+		<div>Welcome to in28minutes</div>
+		<div>Your todos are: ${todos}</div>
+		<table>
+			<thead>
+				<tr>
+					<th> Name
+				<tr>
+			</thead>
+			<tbody>
+				<c:forEach items=${todos} var = "row">
+				
+				</c:ForEach>
+			</tbody>
+		</table>
+	</body>
+</html>

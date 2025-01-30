@@ -6,3 +6,4 @@ create table course
 	primary key (id)
 );
 
+

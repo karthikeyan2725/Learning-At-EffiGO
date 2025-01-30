@@ -1,0 +1,80 @@
+package com.karthikeyan.springboot.learn_jpa_and_entities;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Repository;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Id;
+
+@SpringBootApplication
+public class LearnJpaAndHibernateApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LearnJpaAndHibernateApplication.class, args);
+	}
+
+}
+
+@Entity
+class Course{
+	@Id
+	int id;
+	String name;
+	String author;
+	
+	public Course(int id, String name, String author) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.author = author;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", name=" + name + ", author=" + author + "]";
+	}
+}
+
+@Repository
+class CourseRepository{
+	@Autowired
+	private EntityManager entityMangager;
+	
+	void insert(Course course) {
+		entityMangager.merge(course);
+	}
+	
+}
+
+class CourseCommandLineRunner implements CommandLineRunner{
+	@Autowired
+	private CourseRepository repository;
+	
+	@Override
+	public void run(String... args) throws Exception {
+		System.out.println()
+		repository.insert(new Course(1,"K","P"));
+	}
+}

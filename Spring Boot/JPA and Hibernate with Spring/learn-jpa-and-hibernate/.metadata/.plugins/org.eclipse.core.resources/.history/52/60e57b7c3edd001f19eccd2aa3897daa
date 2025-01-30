@@ -1,0 +1,13 @@
+package com.karthikeyan.springboot.learn_jdbc_template;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class LearnJpaAndHibernateApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

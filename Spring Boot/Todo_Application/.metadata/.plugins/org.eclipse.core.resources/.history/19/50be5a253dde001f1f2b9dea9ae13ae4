@@ -1,0 +1,5 @@
+* Configured Port to 8081
+* Created a SayHelloController to return string at "/say-hello"
+* Added Dependency for tomcat-jasper
+* Created the .jsp file in the src/main/resources/META-INF/resources/WEB-INF/jsp/
+* added method to fetch jsp page

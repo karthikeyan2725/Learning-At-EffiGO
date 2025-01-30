@@ -1,0 +1,10 @@
+<html>
+<head>
+	<title> Login Page </title>
+</head>
+<body>
+	This is the welcome page.
+	Your Name: ${name}
+	Your Password : ${password}
+</body>
+</html>

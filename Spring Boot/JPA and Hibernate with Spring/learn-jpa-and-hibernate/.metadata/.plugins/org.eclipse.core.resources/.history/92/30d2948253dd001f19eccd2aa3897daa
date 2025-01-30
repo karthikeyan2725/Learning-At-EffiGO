@@ -1,0 +1,26 @@
+package com.karthikeyan.springboot.learn_jdbc_template;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+import lombok.Getter;
+
+public class LearnJpaAndHibernateApplication {
+
+	public static void main(String[] args) {
+		LombokExample obj = new LombokExample();
+		System.out.println("id : " + obj.getId())
+	}
+}
+
+
+@Getter
+class LombokExample{
+	private int id = 10;
+	private String name = "Karthikeyan";
+}

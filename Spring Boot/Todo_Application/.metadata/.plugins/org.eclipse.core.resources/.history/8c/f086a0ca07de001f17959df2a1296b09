@@ -1,0 +1,5 @@
+spring.application.name=todo
+
+# Configuring the port number
+server.port = 8081
+logging.level.org.springframework=debug

@@ -1,0 +1,49 @@
+package com.karthikeyan.springboot.learn_jdbc_template;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+@SpringBootApplication
+public class LearnJpaAndHibernateApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LearnJpaAndHibernateApplication.class, args);
+	}
+
+}
+
+@Repository
+class CourseRepository { 
+	
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
+	private static String query = 
+			"""
+			INSERT INTO COURSE
+			VALUES (1, 'SPRING', 'In28Minutes');
+			""";
+	
+	public void insertRow() {
+		jdbcTemplate.execute(query);
+	}	
+}
+
+
+@Component
+class CourseCommandLineRunner implements CommandLineRunner{
+	
+	@Autowired
+	private CourseRepository repo;
+	
+	@Override
+	public void run(String... args) throws Exception {
+		repo.insertRow();
+	}
+	
+}

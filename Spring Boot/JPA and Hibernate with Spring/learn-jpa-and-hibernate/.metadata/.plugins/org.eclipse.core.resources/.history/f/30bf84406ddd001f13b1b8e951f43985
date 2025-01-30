@@ -1,0 +1,60 @@
+package com.karthikeyan.springboot.learn_jpa_and_entities;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Repository;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Id;
+
+@SpringBootApplication
+public class LearnJpaAndHibernateApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LearnJpaAndHibernateApplication.class, args);
+	}
+
+}
+
+@Entity
+class Course{
+	@Id
+	int id;
+	String name;
+	String author;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", name=" + name + ", author=" + author + "]";
+	}
+}
+
+@Repository
+class CourseRepository{
+	@Autowired
+	private EntityManager entityMangager;
+	
+	void insert(Course course) {
+		entityMangager.merge(course);
+	}
+	
+}
